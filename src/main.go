@@ -23,8 +23,52 @@ func main() {
 
 	//Aréa cuadrado
 	const baseCuadrado = 10
-	var areaCuadrado int = baseCuadrado * baseCuadrado
+	areaCuadrado := baseCuadrado * baseCuadrado
 
 	fmt.Println("Aréa cuadrado: ", areaCuadrado)
+
+	x := 10
+	y := 53
+
+	//Suma
+	result := x + y
+	fmt.Println("Suma: ", result)
+
+	//Resta
+	result = x - y
+	fmt.Println("Resta: ", result)
+
+	//Multiplicación
+	result = x * y
+	fmt.Println("Multiplicación: ", result)
+
+	//División
+	result = y / x
+	fmt.Println("División: ", result)
+
+	//Módulo
+	result = y % x
+	fmt.Println("Módulo: ", result)
+
+	//Incremental
+	x++
+	fmt.Println("Incremental: ", x)
+
+	//Decremental
+	y--
+	fmt.Println("Decremental: ", y)
+
+	//Reto
+	//Calcular el aréa de un rectangulo, trapecio y circulo
+	areaRectangulo := x * y
+	fmt.Println("Aréa del rectangulo: ", areaRectangulo)
+
+	areaTrapecio := ((x + y) / 2) * altura
+
+	fmt.Println("Aréa del trapecio: ", areaTrapecio)
+
+	var radio float64 = 10
+	var areaCirculo float64 = pi * (radio * radio)
+	fmt.Println("Aréa del circulo: ", areaCirculo)
 
 }
