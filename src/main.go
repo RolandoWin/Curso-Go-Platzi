@@ -57,4 +57,23 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println("value:", value)
+
+	modulo := 8 % 2
+	switch modulo {
+	case 0:
+		fmt.Println("Es par")
+	default:
+		fmt.Println("Es impar")
+	}
+
+	//Sin condición
+	value1 := 50
+	switch {
+	case value1 > 100:
+		fmt.Println("Es mayor a 100")
+	case value1 < 0:
+		fmt.Println("Es menor a 0")
+	default:
+		fmt.Println("No condición")
+	}
 }
