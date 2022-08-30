@@ -2,122 +2,59 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"log"
+	"strconv"
 )
 
-func normalFunction(message string) {
-	fmt.Println(message)
-}
-
-func tripleArgumento(a, b int, c string) {
-	fmt.Println(a, b, c)
-}
-
-func returnValue(a int) int {
-	return a * 2
-}
-
-func doubleReturn(a float64) (c float64, d float64) {
-	return a, (math.Pi * a)
-}
-
 func main() {
-	// Declaración de constantes
-	const pi float64 = 3.1416
-	const pi2 = 3.141592
-	fmt.Println(pi, pi2)
-	//Declaración de variables enteras
-	base := 12
-	var altura int = 14
-	var area int
+	//for condicional
+	for i := 0; i < 10; i++ {
+		fmt.Println("i:", i)
+	}
 
-	fmt.Println(base, altura, area)
+	fmt.Printf("\n")
 
-	var a int
-	var b float64
-	var c string
-	var d bool
+	//For while
+	counter := 0
+	for counter < 10 {
+		fmt.Println("counter:", counter)
+		counter++
+	}
 
-	fmt.Println(a, b, c, d)
+	for i := 50; i > 10; i-- {
+		fmt.Println("i disminuye: ", i)
+	}
 
-	//Aréa cuadrado
-	const baseCuadrado = 10
-	areaCuadrado := baseCuadrado * baseCuadrado
+	//For forever
+	// counterForever := 0
+	// for {
+	// 	fmt.Println(counterForever)
+	// 	counterForever++
+	// }
 
-	fmt.Println("Aréa cuadrado: ", areaCuadrado)
+	valor1 := 1
+	valor2 := 2
 
-	x := 10
-	y := 53
+	if valor1 == 1 {
+		fmt.Println("Es 1")
+	} else {
+		fmt.Println("No es 1")
+	}
 
-	//Suma
-	result := x + y
-	fmt.Println("Suma: ", result)
+	//With and
+	if valor1 == 1 && valor2 == 2 {
+		fmt.Println("Es verdad, AND")
+	}
 
-	//Resta
-	result = x - y
-	fmt.Println("Resta: ", result)
+	//With or
+	if valor1 == 0 || valor2 == 2 {
+		fmt.Println("Es verdad, OR")
+	}
 
-	//Multiplicación
-	result = x * y
-	fmt.Println("Multiplicación: ", result)
-
-	//División
-	result = y / x
-	fmt.Println("División: ", result)
-
-	//Módulo
-	result = y % x
-	fmt.Println("Módulo: ", result)
-
-	//Incremental
-	x++
-	fmt.Println("Incremental: ", x)
-
-	//Decremental
-	y--
-	fmt.Println("Decremental: ", y)
-
-	//Reto
-	//Calcular el aréa de un rectangulo, trapecio y circulo
-	areaRectangulo := x * y
-	fmt.Println("Aréa del rectangulo: ", areaRectangulo)
-
-	areaTrapecio := ((x + y) / 2) * altura
-
-	fmt.Println("Aréa del trapecio: ", areaTrapecio)
-
-	var radio float64 = 10
-	var areaCirculo float64 = pi * (radio * radio)
-	fmt.Println("Aréa del circulo: ", areaCirculo)
-
-	helloMessage := "Hello"
-	worldMessage := "World"
-
-	//Println
-	fmt.Println(helloMessage, worldMessage)
-
-	//Printf
-	nombre := "Platzi"
-	cursos := 500
-	fmt.Printf("%s tiene más de %d\n", nombre, cursos)
-	//si no sabemos el tipo de la variable
-	fmt.Printf("%v tiene más de %v\n", nombre, cursos)
-
-	//Sprintf: No imprime en consola solo lo guarda en memoria
-	message := fmt.Sprintf("%v tiene más de %v", nombre, cursos)
-	fmt.Print(message, "\n")
-
-	//Tipo de datos
-	fmt.Printf("helloMessage: %T\n", helloMessage)
-	fmt.Printf("cursos: %T\n", cursos)
-
-	normalFunction("Hola mundo")
-	tripleArgumento(1, 2, "hola")
-
-	value := returnValue(2)
-	fmt.Println("Value: ", value)
-
-	value1, value2 := doubleReturn(4)
-	fmt.Println("value1 y value2: ", value1, value2)
-
+	//Convertir texto a número
+	value, err := strconv.Atoi("53")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("value:", value)
 }
