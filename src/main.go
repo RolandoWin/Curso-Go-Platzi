@@ -1,31 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
+
+func isPalindromo(texto string) {
+	var textoReversa string
+	texto = strings.ToLower(texto)
+	for i := len(texto) - 1; i >= 0; i-- {
+		textoReversa += string(texto[i])
+	}
+	if texto == textoReversa {
+		fmt.Println("Es Palindromo")
+	} else {
+		fmt.Println("No es un Palindromo")
+	}
+}
 
 func main() {
-	//Array
-	var array [4]int
-	fmt.Println(array)
-	array[0] = 1
-	array[1] = 2
-	fmt.Println(array, len(array), cap(array))
+	//slice := []string{"hola", "que", "hace"}
 
-	//Slice
-	slice := []int{0, 1, 2, 3, 4, 5, 6}
-	fmt.Println(slice, len(slice), cap(slice))
+	// Primera forma:
+	// for i, valor := range slice {
+	// 	fmt.Println(i, valor)
+	// }s
 
-	//Método en el slice
-	fmt.Println(slice[0])
-	fmt.Println(slice[:3])
-	fmt.Println(slice[2:4])
-	fmt.Println(slice[4:])
+	// Segunda forma:
+	// for _, valor := range slice {
+	// 	fmt.Println( valor)
+	// }
 
-	//Append: para agregar un elemento al slice
-	slice = append(slice, 7)
-	fmt.Println(slice)
+	// Tercera forma:
+	// for i := range slice {
+	// 	fmt.Println(i)
+	// }
 
-	//Append: agregar una nueva lista
-	newSlice := []int{8, 9, 10}
-	slice = append(slice, newSlice...)
-	fmt.Println(slice)
+	isPalindromo("Ama")
+
 }
