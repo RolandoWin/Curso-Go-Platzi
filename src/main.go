@@ -1,15 +1,19 @@
+// Stringers Personalizar el output de structs en consola
 package main
 
-import (
-	pk "curso_golang_platzi/src/mypackage"
-	"fmt"
-)
+import "fmt"
+
+type pc struct {
+	ram   int
+	disk  int
+	brand string
+}
+
+func (myPC pc) String() string {
+	return fmt.Sprintf("Tengo %d GB RAM, %d GB Disco y es una %s", myPC.ram, myPC.disk, myPC.brand)
+}
 
 func main() {
-	var myCar pk.CarPublic
-	myCar.Brand = "Lamborghini"
-	myCar.Year = 2022
-	fmt.Println(myCar)s
-
-	pk.PrintMessage("Hola Platzi")
+	myPC := pc{ram: 16, brand: "ASUS", disk: 100}
+	fmt.Println(myPC)
 }
