@@ -9,7 +9,7 @@ func main08() {
 	var myCar pk.CarPublic
 	myCar.Brand = "Lamborghini"
 	myCar.Year = 2022
-	fmt.Println(myCar)s
+	fmt.Println(myCar)
 
 	pk.PrintMessage("Hola Platzi")
 }

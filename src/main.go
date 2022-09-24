@@ -1,47 +1,31 @@
-// Lección interfaces y listas de interfaces
+// Primer contacto con las gourutines
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
-//Creamos la interface
-type figuras2D interface {
-	area() float64
-}
-
-//creamos la clase cuadrado
-type cuadrado struct {
-	lado float64
-}
-
-//Creamos la clase rectangulo
-type rectangulo struct {
-	base   float64
-	altura float64
-}
-
-//Area del cuadrado
-func (c cuadrado) area() float64 {
-	return c.lado * c.lado
-}
-
-//Area del rectangulo
-func (r rectangulo) area() float64 {
-	return r.base * r.altura
-}
-
-//Función de cálculo
-func calcular(f figuras2D) {
-	fmt.Println("Área:", f.area())
+func say(texto string, wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Println(texto)
 }
 
 func main() {
-	myCuadrado := cuadrado{lado: 2}
-	myRectangulo := rectangulo{base: 2, altura: 4}
+	var wg sync.WaitGroup
 
-	calcular(myCuadrado)
-	calcular(myRectangulo)
+	fmt.Println("Hello")
+	wg.Add(1)
 
-	//Lista de interfaces
-	myInterface := []interface{}{"Hola", 12, 4.99, true}
-	fmt.Println(myInterface...)
+	//agregamos concurrencia con "go"
+	go say("World", &wg)
+	//Espera a que terminen todas las gourutines
+	wg.Wait()
+
+	go func(texto string) {
+		fmt.Println(texto)
+	}("Adios")
+
+	time.Sleep(time.Second * 1)
 }
