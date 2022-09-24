@@ -1,31 +1,16 @@
-// Primer contacto con las gourutines
+// Channels: La forma de organizar las goroutines
 package main
 
-import (
-	"fmt"
-	"sync"
-	"time"
-)
+import "fmt"
 
-func say(texto string, wg *sync.WaitGroup) {
-	defer wg.Done()
-	fmt.Println(texto)
+func say(texto string, c chan<- string) {
+	c <- texto
 }
 
 func main() {
-	var wg sync.WaitGroup
-
+	c := make(chan string, 1)
 	fmt.Println("Hello")
-	wg.Add(1)
 
-	//agregamos concurrencia con "go"
-	go say("World", &wg)
-	//Espera a que terminen todas las gourutines
-	wg.Wait()
-
-	go func(texto string) {
-		fmt.Println(texto)
-	}("Adios")
-
-	time.Sleep(time.Second * 1)
+	go say("Bye", c)
+	fmt.Println(<-c)
 }
