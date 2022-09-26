@@ -16,7 +16,7 @@ func (myPC *pc) duplicateRAM() {
 	myPC.ram = myPC.ram * 2
 }
 
-func main09() {
+func main-09() {
 
 	a := 50
 	b := &a //guarda la posicion en memoria de la variable a

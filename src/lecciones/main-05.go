@@ -18,7 +18,7 @@ func isPalindromo(texto string) {
 	}
 }
 
-func main05() {
+func main-05() {
 	//slice := []string{"hola", "que", "hace"}
 
 	// Primera forma:

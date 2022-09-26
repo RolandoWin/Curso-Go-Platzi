@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main04() {
+func main-04() {
 	//Array
 	var array [4]int
 	fmt.Println(array)

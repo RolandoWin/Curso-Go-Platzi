@@ -12,7 +12,7 @@ func say(texto string, wg *sync.WaitGroup) {
 	fmt.Println(texto)
 }
 
-func main12() {
+func main-12() {
 	var wg sync.WaitGroup
 
 	fmt.Println("Hello")

@@ -21,7 +21,7 @@ func doubleReturn(a float64) (c float64, d float64) {
 	return a, (math.Pi * a)
 }
 
-func main01() {
+func main-01() {
 	// Declaración de constantes
 	const pi float64 = 3.1416
 	const pi2 = 3.141592

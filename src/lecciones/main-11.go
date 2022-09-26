@@ -34,7 +34,7 @@ func calcular(f figuras2D) {
 	fmt.Println("Área:", f.area())
 }
 
-func main11() {
+func main-11() {
 	myCuadrado := cuadrado{lado: 2}
 	myRectangulo := rectangulo{base: 2, altura: 4}
 

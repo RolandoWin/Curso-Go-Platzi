@@ -7,7 +7,7 @@ type car struct {
 	year  int
 }
 
-func main07() {
+func main-07() {
 	myCar := car{brand: "Ford", year: 2020}
 	fmt.Println(myCar)
 
