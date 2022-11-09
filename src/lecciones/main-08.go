@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main-08() {
+func main_08() {
 	var myCar pk.CarPublic
 	myCar.Brand = "Lamborghini"
 	myCar.Year = 2022

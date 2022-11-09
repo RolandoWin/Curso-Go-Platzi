@@ -1,4 +1,4 @@
-// Range, Close y Select en channels
+// Lección 29: Range, Close y Select en channels
 package main
 
 import "fmt"
@@ -13,30 +13,31 @@ func main() {
 	c <- "Mensaje-01"
 	c <- "Mensaje-02"
 
-	//len: cantidad de canales utilizados
+	//len: cantidad de canales utilizados (goroutines)
 	//cap: capacidad maxima de canales
-	fmt.Println(len(c), cap(c))
+	fmt.Println("Cantidad Goroutines: ", len(c), "Capacidad Máxima: ", cap(c))
 
-	//Range y Close
+	//Range: Nos ayuda hacer el recorrido de una lista
+	//Close: Cierra los canales cuando ya se deja de usar
 	close(c)
 
 	for message := range c {
 		fmt.Println(message)
 	}
 
-	//Select
-	email1 := make(chan string)
-	email2 := make(chan string)
+	// //Select
+	email_01 := make(chan string)
+	email_02 := make(chan string)
 
-	go message("mensaje1", email1)
-	go message("mensaje2", email2)
+	go message("Mensaje-01", email_01)
+	go message("Mensaje-02", email_02)
 
 	for i := 0; i < 2; i++ {
 		select {
-		case m1 := <-email1:
-			fmt.Println("Email recibido de email1", m1)
-		case m2 := <-email2:
-			fmt.Println("Email recibido de email2", m2)
+		case m1 := <-email_01:
+			fmt.Println("Email recibido de email01", m1)
+		case m2 := <-email_02:
+			fmt.Println("Email recibido de email02", m2)
 		}
 	}
 }

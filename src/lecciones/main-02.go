@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func main-02() {
+func main_02() {
 	//for condicional
 	for i := 0; i < 10; i++ {
 		fmt.Println("i:", i)

@@ -7,7 +7,7 @@ func say(texto string, c chan<- string) {
 	c <- texto
 }
 
-func main-13() {
+func main_13() {
 	c := make(chan string, 1)
 	fmt.Println("Hello")
 
